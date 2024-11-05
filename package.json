@@ -4,8 +4,8 @@
   "description": "## Description",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd front && npm install && cd .. && cd back && npm install",
-    "project": "npm run --prefix ./front dev & npm run --prefix ./back dev",
+    "postinstall": "cd front && npm install && cd ../back && npm install",
+    "project": "npm run --prefix ./back dev & npm run --prefix ./front dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
