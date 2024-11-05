@@ -1,0 +1,21 @@
+{
+  "name": "splitnshare",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd front && npm install && cd ../back && npm install",
+    "project": "npm run --prefix ./back dev & npm run --prefix ./front dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atthis/cda-spiltnshare.git"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Atthis/cda-spiltnshare/issues"
+  },
+  "homepage": "https://github.com/Atthis/cda-spiltnshare#readme"
+}
