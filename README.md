@@ -13,3 +13,9 @@ L'objectif de l'application est de permettre le partage des dépenses entre plus
 
 - front : fichiers React sources
 - back : fichiers du serveur, et build de l'application React (dans le dossier `dist`)
+
+## Technos
+
+- front : application *single page* React
+- back : server ExpressJS
+- base de données : SQlite
