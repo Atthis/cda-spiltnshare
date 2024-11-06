@@ -1,0 +1,47 @@
+.breadcrumb-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15%;
+}
+
+.breadcrumb {
+    width: 180px;
+    height: 47px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;  
+    padding: 0 10px;
+    gap: 10px;
+}
+
+.breadcrumb.selected {
+    background: rgba(255, 255, 255, 0.19);
+    color: #FFF;
+}
+
+.breadcrumb.unselected {
+    background: #080D1B;
+    color: rgba(255, 255, 255, 0.31);
+}
+
+.breadcrumb.selected p {
+    color: #FFF;
+    margin-left: 10px; 
+}
+
+.breadcrumb.unselected p {
+    color: rgba(255, 255, 255, 0.31);
+}
+
+.text-scanner, .text-ticket {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}

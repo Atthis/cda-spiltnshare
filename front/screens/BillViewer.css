@@ -1,0 +1,20 @@
+.bill-viewer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 384px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border: 0.25px solid rgba(253, 247, 247, 0.21);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+    margin-top: 20%;
+}
+
+.bill-viewer-image {
+    width: 85%;
+    height: 100%;
+    flex-shrink: 0;
+    border-radius: 12px;
+}
