@@ -34,22 +34,6 @@ sqliteDB.serialize(() => {
       }
   });
 
-  sqliteDB.run(`
-          create table if not exists receipts_users (
-            idReceipt INTEGER,
-            idUser INTEGER,
-            FOREIGN KEY (idReceipt) REFERENCES receipts(id),
-            FOREIGN KEY (idReceipt) REFERENCES users(id),
-            CONSTRAINT PK_receipt_user PRIMARY KEY(idReceipt, idUser)
-          );
-      `, (err) => {
-      if (err) {
-          console.log(`ERROR: on created receipts_users table : ${err}`);
-      } else {
-          console.log('INFO: receipts_users table created or updated');
-      }
-  });
-
   sqliteDB.run("COMMIT", (err) => {
       if (err) {
           console.log(`ERROR: on created or updated database : ${err}`);
