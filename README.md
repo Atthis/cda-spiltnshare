@@ -6,8 +6,14 @@ L'objectif de l'application est de permettre le partage des dépenses entre plus
 
 ## Mise en place
 
+### Environnement de travail
+
 - installer les dépendances du projet à l'aide de la commande `npm run postinstall`
 - pour lancer le front et le back : `npm run project`
+
+### Base de données
+
+- pour créer les tables de la base de données : `npm run db-create`
 
 ## Structure du projet
 

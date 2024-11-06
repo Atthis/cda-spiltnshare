@@ -6,6 +6,7 @@
   "scripts": {
     "postinstall": "cd front && npm install && cd ../back && npm install",
     "project": "npm run --prefix ./back dev & npm run --prefix ./front dev",
+    "db-create": "node back/src/db/migrate.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
