@@ -12,12 +12,12 @@ L'objectif de l'application est de permettre le partage des dépenses entre plus
 
 ## Mise en place
 
-### Environnement de travail
+### Étape 1 : mettre en place l'environnement de travail
 
 - installer les dépendances du projet à l'aide de la commande `npm run postinstall`
 - pour lancer le front et le back : `npm run project`
 
-### Base de données
+### Étape 2 : créer et remplir la base de données
 
 - pour créer les tables de la base de données : `npm run db-create`
 - pour insérer des données d'exemple dans la base de données : `npm run db-create`
