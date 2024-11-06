@@ -1,0 +1,35 @@
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-glow {
+    fill: rgba(253, 247, 247, 0.05);
+    stroke-width: 10px;
+    stroke: rgba(253, 247, 247, 0.02);
+    }
+
+.logo {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 60px;
+    width: 27px;
+    height: 31px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 22px;
+}
+
+#tagline {
+    color: rgba(255, 255, 255, 0.38);
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 10%;
+}
