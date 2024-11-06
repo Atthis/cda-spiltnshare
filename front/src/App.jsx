@@ -13,7 +13,7 @@ function App() {
       <Logo />
       <BreadCrumb />
       <Routes>
-        <Route path="/" element={<BillUploader setSelectedFile={setSelectedFile} />} />
+        <Route path="" element={<BillUploader setSelectedFile={setSelectedFile} />} />
         <Route path="/view-file" element={<BillViewer file={selectedFile} />} />
       </Routes>
     </Router>
