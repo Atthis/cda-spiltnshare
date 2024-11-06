@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 app.get('/test', async (req, res) => {
   const sql = 'SELECT * FROM receipts';
 
-  const data = await new Promise(function (resolve, reject) {
+  const rawData = await new Promise(function (resolve, reject) {
     db.all(sql, [], function (err, rows) {
       if (err) {
         reject(err);
@@ -24,7 +24,20 @@ app.get('/test', async (req, res) => {
     });
   });
 
-  res.json(data);
+  const formatedData = [];
+
+  rawData.forEach(row => {
+    const jsonArticles = JSON.parse(row.articles_data);
+
+    const formatedRow = {
+      ...row,
+      articles_data: jsonArticles
+    };
+
+    formatedData.push(formatedRow);
+  })
+
+  res.json(formatedData);
 })
 
 app.listen(port, () => {
