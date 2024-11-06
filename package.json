@@ -19,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/Atthis/cda-spiltnshare/issues"
   },
-  "homepage": "https://github.com/Atthis/cda-spiltnshare#readme",
-  "dependencies": {
-    "react-router-dom": "^6.27.0"
-  }
+  "homepage": "https://github.com/Atthis/cda-spiltnshare#readme"
 }
