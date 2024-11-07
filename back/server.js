@@ -5,11 +5,16 @@ const path = require('path')
 
 const db = require('./src/db/db.js');
 
-app.use(express.static(path.join(__dirname, 'dist')))
+const apiRouter = require('./src/api/apiRouter')
+
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/', (req, res) => {
   res.sendFile('index.html')
 })
+
+app.use('/api', apiRouter);
 
 app.get('/test', async (req, res) => {
   const sql = 'SELECT * FROM receipts';
