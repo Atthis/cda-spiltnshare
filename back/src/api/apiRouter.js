@@ -21,11 +21,11 @@ router.post('/ocr', async (req, res) => {
       return res.status(400).json({ message: "Aucune image fournie." });
     }
 
-    const regex = /^(\d+)\s+([a-zA-Z\s']+)\s+(\d+[.,]?\d*)$/;
+    const regex = /^(\d+)\s+([a-zA-Z\s'\d]+)\s+(\d+[.,]?\d*)$/;
 
     async function convertImageToText(imageBase64) {
       const worker = await createWorker({
-        langPath: 'https://tessdata.projectnaptha.com/4.0.0', 
+        langPath: 'https://tessdata.projectnaptha.com/4.0.0',
         logger: (m) => console.log(m),
       });
       
@@ -48,17 +48,18 @@ router.post('/ocr', async (req, res) => {
 
     const items = textResult.split('\n').map(line => {
       console.log("Ligne OCR:", line);
+      const normalizeLine = line.normalize("NFD").replace(/[^\w\ .\n']/gi, "")
 
-      const match = line.match(regex);
+      const match = normalizeLine.match(regex);
       if (match) {
-        const quantity = parseInt(match[1], 10); 
-        const name = match[2].trim();         
-        const unitPrice = parseFloat(match[3].replace(',', '.')); 
+        const quantity = parseInt(match[1], 10);
+        const name = match[2].trim();
+        const unitPrice = parseFloat(match[3].replace("," , "."));
 
         return {
           name: name,
           quantity: quantity,
-          unitPrice: unitPrice,
+          unitPrice: (unitPrice / 100).toFixed(2),
         };
       }
       return null;
