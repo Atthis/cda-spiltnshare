@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import './BillViewer.css';
 import ButtonLarge from '../components/ButtonLarge';
-import { LuCheck } from 'react-icons/lu';
+
+import { LuCheck, LuUser2, LuMail } from 'react-icons/lu';
 import { useEffect } from 'react';
 
 export default function BillViewer({ file, ocrData }) {
@@ -51,8 +52,22 @@ export default function BillViewer({ file, ocrData }) {
         <>
             <div className="bill-viewer-container">
                 <img src={fileURL} alt="Selected" className="bill-viewer-image" />
+                <div className="bill-viewer-input-container">
+                    <div className="icon-label-container">
+                        <LuUser2 />
+                        <label htmlFor="name">Prénom</label>
+                    </div>
+                    <input className="bill-viewer-inputs" type="text"/>
+                    <div className="icon-label-container">
+                        <LuMail />
+                        <label htmlFor="name">Adresse email</label>
+                    </div>
+                    <input className="bill-viewer-inputs" type="text"/>
+                </div>
             </div>
-            <ButtonLarge text="Valider" icon={LuCheck} onClick={postReceipt}/>
+            <div className="button-container">
+            <ButtonLarge text="Valider" icon={LuCheck} onClick={postReceipt} width="250px"/>
+            </div>
         </>
     );
 }

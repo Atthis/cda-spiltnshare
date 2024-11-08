@@ -71,7 +71,7 @@ export default function BillEditor({ file, ocrData }) {
                 <thead className="table-header">
                     <tr className='table-header-row'>
                         <th className='table-header-item' id='header-article' scope='col'>Article</th>
-                        <th className='table-header-item' id='header-price' scope='col'>Prix Unitaire</th>
+                        <th className='table-header-item' id='header-price' scope='col'>Prix</th>
                         <th className='table-header-item' id='header-delete' scope='col'></th>
                     </tr>
                 </thead>
@@ -139,12 +139,12 @@ export default function BillEditor({ file, ocrData }) {
                         </div>
                     </div>
                     <div className="button-container">
-                        <ButtonLarge text="Confirmer" onClick={handleAddArticle} width="110%" color="#FFF" textColor="#000" />
+                        <ButtonLarge text="Confirmer" onClick={handleAddArticle} width="250px" color="#FFF" textColor="#000" />
                     </div>
                 </div>
             )}
             <div className="separator" id="separator-button"></div>
-            <div className="button-container">
+            <div className="add-button-container">
                 <ButtonLarge text="Ajouter un article" onClick={() => setShowInputs(true)} width="208%" />
             </div>
             <div className="separator" id="separator-button"></div>
@@ -153,8 +153,8 @@ export default function BillEditor({ file, ocrData }) {
                     <p>Total: </p>
                     <p className="numbers">{total} €</p>
                 </div>
-                <div className="button-container">
-                    <ButtonLarge text="Valider" width="450%" color="#FFF" textColor="#000" />
+                <div className="validate-button-container">
+                    <ButtonLarge text="Valider" width="250px" color="#FFF" textColor="#000" />
                 </div>
             </div>
         </section>
