@@ -37,8 +37,8 @@
 }
 
 .bill-editor-inputs {
-    width: 100%; /* Utiliser 100% pour s'adapter au conteneur parent */
-    max-width: 150px; /* Limite maximale pour éviter les débordements */
+    width: 122px; 
+    max-width: 150px; 
     height: 26px;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.20);
@@ -60,7 +60,7 @@
 }
 
 .table-header, .table-body-item {
-    color: rgba(255, 255, 255, 0.38);
+    color: rgba(255, 255, 255, 0.70);
     font-size: 14px;
 }
 
@@ -84,7 +84,7 @@
     width: 18%;
 }
 
-.new-article-form, .button-container {
+.new-article-form, .button-container, .add-button-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,6 +98,10 @@
     width: 100%;
     min-height: 110px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
+.add-button-container {
+   margin: 10px;
 }
 
 .total-text {
