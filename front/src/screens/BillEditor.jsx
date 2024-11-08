@@ -3,21 +3,14 @@ import './BillEditor.css';
 import ButtonLarge from '../components/ButtonLarge';
 import { LuBuilding, LuCalendar, LuTrash2, LuDollarSign, LuPizza } from "react-icons/lu";
 
-export default function BillEditor({ file }) {
-    if (!file) {
-        return <p>Aucun fichier sélectionné</p>;
-    }
+export default function BillEditor({ file, ocrData }) {
+    // if (!file) {
+    //     return <p>Aucun fichier sélectionné</p>;
+    // }
 
     const fileURL = URL.createObjectURL(file);
 
-    const [ocrData, setOcrData] = useState([
-        { "name": "pizza 4 fromages", "quantity": 2, "unitPrice": 11.80 },
-        { "name": "pizza napolitaine", "quantity": 1, "unitPrice": 12.50 },
-        { "name": "burger normand", "quantity": 1, "unitPrice": 9.50 },
-        { "name": "bière pression 25cl", "quantity": 2, "unitPrice": 3.50 },
-        { "name": "soda", "quantity": 2, "unitPrice": 2.50 },
-        { "name": "2xsundea €3.80", "quantity": 0, "unitPrice": 0 }
-    ]);
+    const [currentOcrData, setCurrentOcrData] = useState(ocrData.OCRData);
 
     const [newArticle, setNewArticle] = useState('');
     const [newPrice, setNewPrice] = useState('');
@@ -27,12 +20,12 @@ export default function BillEditor({ file }) {
     const [editPrice, setEditPrice] = useState('');
 
     const handleDelete = (index) => {
-        setOcrData(ocrData.filter((_, i) => i !== index));
+        setCurrentOcrData(currentOcrData.filter((_, i) => i !== index));
     };
 
     const handleAddArticle = () => {
         if (newArticle && newPrice) {
-            setOcrData([...ocrData, { name: newArticle, quantity: 1, unitPrice: parseFloat(newPrice) }]);
+            setCurrentOcrData([...currentOcrData, { name: newArticle, quantity: 1, unitPrice: parseFloat(newPrice) }]);
             setNewArticle('');
             setNewPrice('');
             setShowInputs(false);
@@ -41,18 +34,18 @@ export default function BillEditor({ file }) {
 
     const handleEdit = (index) => {
         setEditIndex(index);
-        setEditName(ocrData[index].name);
-        setEditPrice(ocrData[index].unitPrice);
+        setEditName(currentOcrData[index].name);
+        setEditPrice(currentOcrData[index].unitPrice);
     };
 
     const handleSaveEdit = (index) => {
-        const updatedData = [...ocrData];
+        const updatedData = [...currentOcrData];
         updatedData[index] = { ...updatedData[index], name: editName, unitPrice: parseFloat(editPrice) };
-        setOcrData(updatedData);
+        setCurrentOcrData(updatedData);
         setEditIndex(null);
     };
 
-    const total = ocrData.reduce((acc, item) => acc + (item.unitPrice * item.quantity), 0).toFixed(2);
+    const total = currentOcrData.reduce((acc, item) => acc + (item.unitPrice * item.quantity), 0).toFixed(2);
 
     return (
         <section className="bill-editor-container">
@@ -83,7 +76,7 @@ export default function BillEditor({ file }) {
                     </tr>
                 </thead>
                 <tbody className="table-body">
-                    {ocrData.map((item, index) => (
+                    {currentOcrData.map((item, index) => (
                         <tr key={index}>
                             <td className='table-body-item' id='body-article'>
                                 {editIndex === index ? (
