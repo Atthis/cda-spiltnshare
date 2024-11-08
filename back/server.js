@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3615
 const path = require('path')
+const cors = require('cors')
 
 const db = require('./src/db/db.js');
 
@@ -9,6 +10,7 @@ const apiRouter = require('./src/api/apiRouter')
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use(cors({ origin: 'http://localhost:5173' }));
 
 app.get('/', (req, res) => {
   res.sendFile('index.html')
