@@ -28,7 +28,7 @@ router.post('/ocr', async (req, res) => {
         langPath: 'https://tessdata.projectnaptha.com/4.0.0',
         logger: (m) => console.log(m),
       });
-      
+
       await worker.load();
       await worker.loadLanguage('fra');
       await worker.initialize('fra');
@@ -37,14 +37,12 @@ router.post('/ocr', async (req, res) => {
 
       const { data } = await worker.recognize(imageBuffer);
       const list = data.text.toString();
-      console.log("Texte OCR extrait :", list);
 
       await worker.terminate();
       return list;
     }
 
     const textResult = await convertImageToText(image);
-    console.log("Texte OCR traité :", textResult);
 
     const items = textResult.split('\n').map(line => {
       console.log("Ligne OCR:", line);
@@ -54,18 +52,16 @@ router.post('/ocr', async (req, res) => {
       if (match) {
         const quantity = parseInt(match[1], 10);
         const name = match[2].trim();
-        const unitPrice = parseFloat(match[3].replace("," , "."));
+        const unitPrice = match[3].replace(/\D/g , "");
 
         return {
           name: name,
           quantity: quantity,
-          unitPrice: (unitPrice / 100).toFixed(2),
+          unitPrice: (Number(unitPrice) / 100).toFixed(2),
         };
       }
       return null;
     }).filter(item => item);
-
-    console.log("Articles extraits :", items);
 
     res.status(200).json({ message: "Traitement OK", data: items });
   } catch (error) {
