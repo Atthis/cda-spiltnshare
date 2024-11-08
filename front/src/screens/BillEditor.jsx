@@ -123,7 +123,7 @@ export default function BillEditor({ file }) {
                         <div className="article-input-container">
                             <div className="icon-label-container">
                                 <LuPizza />
-                                <label htmlFor="article" className="labels">Nom de l'article</label>
+                                <label htmlFor="article" className="labels">Article</label>
                             </div>
                             <input
                                 type="text"
@@ -146,12 +146,12 @@ export default function BillEditor({ file }) {
                         </div>
                     </div>
                     <div className="button-container">
-                        <ButtonLarge text="Confirmer" onClick={handleAddArticle} width="110%" color="#FFF" textColor="#000" />
+                        <ButtonLarge text="Confirmer" onClick={handleAddArticle} width="250px" color="#FFF" textColor="#000" />
                     </div>
                 </div>
             )}
             <div className="separator" id="separator-button"></div>
-            <div className="button-container">
+            <div className="add-button-container">
                 <ButtonLarge text="Ajouter un article" onClick={() => setShowInputs(true)} width="208%" />
             </div>
             <div className="separator" id="separator-button"></div>
@@ -160,7 +160,7 @@ export default function BillEditor({ file }) {
                     <p>Total: </p>
                     <p className="numbers">{total} €</p>
                 </div>
-                <div className="button-container">
+                <div className="validate-button-container">
                     <ButtonLarge text="Valider" width="450%" color="#FFF" textColor="#000" />
                 </div>
             </div>
