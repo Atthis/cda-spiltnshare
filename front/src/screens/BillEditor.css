@@ -61,7 +61,7 @@
 }
 
 .table-header, .table-body-item {
-    color: rgba(255, 255, 255, 0.38);
+    color: rgba(255, 255, 255, 0.70);
     font-size: 14px;
 }
 
@@ -107,6 +107,14 @@
     width: 100%;
     min-height: 110px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
+.add-button-container {
+   margin: 10px;
+}
+
+.validate-button-container {
+    margin-bottom: 20px;
 }
 
 .total-text {
