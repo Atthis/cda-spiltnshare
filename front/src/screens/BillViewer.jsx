@@ -51,7 +51,8 @@ export default function BillViewer({ file }) {
             });
 
             const data = await response.json();
-            console.log("Réponse du serveur :", data);
+            console.log("Réponse du serveur :", data);ù
+            
         } catch (error) {
             console.error("Erreur lors de l'envoi de l'image :", error);
         }

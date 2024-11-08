@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
 router.post('/ocr', async (req, res) => {
   try {
-    const { image } = req.body; // On suppose que l'image est envoyée en base64
+    const { image } = req.body;
 
     if (!image) {
       return res.status(400).json({ message: "Aucune image fournie." });
@@ -53,12 +53,12 @@ router.post('/ocr', async (req, res) => {
       if (match) {
         const quantity = parseInt(match[1], 10); 
         const name = match[2].trim();         
-        const price = parseFloat(match[3].replace(',', '.')); 
+        const unitPrice = parseFloat(match[3].replace(',', '.')); 
 
         return {
           name: name,
           quantity: quantity,
-          price: price,
+          unitPrice: unitPrice,
         };
       }
       return null;
