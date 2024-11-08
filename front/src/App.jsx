@@ -9,14 +9,16 @@ import './App.css';
 
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [OCRData, setOCRData] = useState(null);
+
   return (
     <Router>
       <Logo />
       <BreadCrumb />
       <Routes>
         <Route path="" element={<BillUploader setSelectedFile={setSelectedFile} />} />
-        <Route path="/view-file" element={<BillViewer file={selectedFile} />} />
-        <Route path="/edit-file" element={<BillEditor file={selectedFile} />} />
+        <Route path="/view-file" element={<BillViewer file={selectedFile} ocrData={{OCRData, setOCRData}}/>} />
+        <Route path="/edit-file" element={<BillEditor file={selectedFile} ocrData={{OCRData, setOCRData}}/>} />
       </Routes>
     </Router>
   );
