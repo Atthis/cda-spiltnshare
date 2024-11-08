@@ -84,7 +84,7 @@
     width: 18%;
 }
 
-.new-article-form, .button-container, .add-button-container {
+.new-article-form, .button-container, .add-button-container, .validate-button-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,6 +102,10 @@
 
 .add-button-container {
    margin: 10px;
+}
+
+.validate-button-container {
+    margin-bottom: 20px;
 }
 
 .total-text {

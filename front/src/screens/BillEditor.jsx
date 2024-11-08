@@ -160,7 +160,7 @@ export default function BillEditor({ file }) {
                     <p>Total: </p>
                     <p className="numbers">{total} €</p>
                 </div>
-                <div className="button-container">
+                <div className="validate-button-container">
                     <ButtonLarge text="Valider" width="250px" color="#FFF" textColor="#000" />
                 </div>
             </div>
