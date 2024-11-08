@@ -29,7 +29,6 @@ export default function BillViewer({ file, ocrData }) {
     const postReceipt = async () => {
         try {
             const base64Img = await imageToBase64(file);
-            console.log("Prêt à l'envoi " + base64Img);
 
             const response = await fetch("http://localhost:3615/api/ocr", {
                 method: 'POST',
