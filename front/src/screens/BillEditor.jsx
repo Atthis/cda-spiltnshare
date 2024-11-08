@@ -116,7 +116,7 @@ export default function BillEditor({ file, ocrData }) {
                         <div className="article-input-container">
                             <div className="icon-label-container">
                                 <LuPizza />
-                                <label htmlFor="article" className="labels">Nom de l'article</label>
+                                <label htmlFor="article" className="labels">Article</label>
                             </div>
                             <input
                                 type="text"
