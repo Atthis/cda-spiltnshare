@@ -1,0 +1,32 @@
+[
+  {
+    "name": "pizza 4 fromages",
+    "quantity": 2,
+    "unitPrice": 11.80
+  },
+  {
+    "name": "pizza napolitaine",
+    "quantity": 1,
+    "unitPrice": 12.50
+  },
+  {
+    "name": "burger normand",
+    "quantity": 1,
+    "unitPrice": 9.50
+  },
+  {
+    "name": "bière pression 25cl",
+    "quantity": 2,
+    "unitPrice": 3.50
+  },
+  {
+    "name": "soda",
+    "quantity": 2,
+    "unitPrice": 2.50
+  },
+  {
+    "name": "2xsundea €3.80",
+    "quantity": 0,
+    "unitPrice": 0
+  }
+]
